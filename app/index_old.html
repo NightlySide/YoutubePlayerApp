@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- Feuilles de style CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <title>Youtube Music Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+  <div id="background" class="blur"></div>
+    <div class="container valign-wrapper">
+      <div class="row valign">
+        <h1 id="title" class="white-text">Title</h1>
+        <img src="" class="responsive circle" id="thumbnail">
+      </div>
+      <div class="row valign">
+        <div class="input-field col s6">
+          <input class="white-text" id="videoID" type="text" class="validate">
+          <label for="videoID">Youtube link</label>
+        </div>
+        <div class="input-field col s6">
+          <button class="btn waves-effect waves-light" id="videoSend">Load</button>
+        </div>
+        <div class="input-field col s6">
+          <button class="btn waves-effect waves-light" id="pause">Pause</button>
+        </div>
+      </div>
+      <div class="row valign">
+        <p class="range-field">
+          <input type="range" id="songVol" min="0" max="100" value="100"/>
+        </p>
+      </div>
+      <div class="row valign">
+        <p id="desc" class="white-text"></p>
+      </div>
+    </div>
+    <audio id="player">
+      <source id="videoSRC" src="http://localhost:3000/Ap-HeMIKi-c" type="audio/mpeg">
+    </audio>
+    <div class="container">
+      <div class="row">
+        <a href="./newindex.html" class="btn waves-effect waves-light">New HTML</a>
+      </div>
+    </div>
+    <script>
+      window.$ = window.jQuery = require('./jquery.js');
+      window.Hammer = require('./hammer.js');
+    </script>
+    <script src="./index.js"></script>
+    <script src="./js/materialize.js"></script>
+    <script src="./events.js"></script>
+  </body>
+</html>

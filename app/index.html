@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Feuilles de style CSS -->
+        <link rel="stylesheet" href="index.css">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        
+        <title>Youtube Player App</title>
+    </head>
+    <body>
+        <!-- Background Image -->
+        <div id="background" class="blur"></div>
+        
+        <header>
+            <!-- Dropdown Structure -->
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="search.html">Search</a></li>
+                <li><a href="#!">History</a></li>
+                <li><a href="#!">Favorites</a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper">
+                    <ul class="right">
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Pages<i class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- Main Content -->
+        <main>
+            <div class="container">
+                <div class="row" id="title-and-image">
+                    <img src="" id="thumbnail" class="responsive circle" height="100">
+                    <h3 id="title" class="white-text">Song title</h3>
+                </div>
+                <div class="row center-align" id="volume-control">
+                    <p class="range-field">
+                      <input type="range" id="songVol" min="0" max="100" value="100"/>
+                    </p>
+                </div>
+                <div class="row center-align" id="control-buttons">
+                    <div class="container center-align">
+                        <div class="row">
+                            <a class="btn waves-effect waves-light orange lighten-1" id="prev">Previous</a>
+                            <a class="btn waves-effect waves-light orange lighten-1" id="pause">Pause</a>
+                            <a class="btn waves-effect waves-light orange lighten-1" id="next">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="page-footer center-align">
+            <div class="container">
+                <div class="row" id="loadingURL">
+                    <div class="input-field col s10">
+                      <input class="white-text" id="videoID" type="text" class="validate">
+                      <label for="videoID">Youtube link</label>
+                    </div>
+                    <div class="input-field col s2">
+                      <button class="btn waves-effect waves-light orange lighten-1" id="videoSend">Charge Song</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#description">Description</a>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Description Model -->
+        <div id="description" class="modal">
+            <div class="modal-content">
+                <h4>Description</h4>
+                <p id="desc" class="grey-text text-darken-2">A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+        
+        <!-- Audio Player -->
+        <audio id="player">
+          <source id="videoSRC" src="http://localhost:3000/Ap-HeMIKi-c" type="audio/mpeg">
+        </audio>
+        
+        <!-- Scripts -->
+        <script>
+          window.$ = window.jQuery = require('./jquery.js');
+          window.Hammer = require('./hammer.js');
+            
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+        });
+        </script>
+        <script src="./index.js"></script>
+        <script src="./js/materialize.js"></script>
+        <script src="./events.js"></script>
+    </body>
+</html>

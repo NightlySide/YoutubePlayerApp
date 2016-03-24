@@ -1,0 +1,19 @@
+{
+  "name": "YoutubePlayerApp",
+  "version": "0.0.1",
+  "main": "main.js",
+  "dependencies": {
+    "electron-prebuilt": "^0.37.2",
+    "fluent-ffmpeg": "^2.0.1",
+    "node-youtubeapi-simplifier": "^1.4.2",
+    "through2": "^2.0.1",
+    "xtend": "^4.0.1",
+    "ytdl-core": "^0.7.13"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.2"
+  }
+}
